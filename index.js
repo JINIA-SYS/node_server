@@ -1,7 +1,7 @@
 //IMPORT SECTION:
 const express = require("express")
 const app = express()
-const PORT = 8800
+const PORT = 8800 ||process.env.PORT
 const process = require("process")
 const dotenv = require("dotenv")
 const cors = require('cors')
