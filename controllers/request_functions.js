@@ -27,12 +27,12 @@ const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
 //CODE SECTION
 const request_post = async (req, res) => {
     try {
-        const {prompts} = req.body
+        const { prompts } = req.body
 
         // console.log(prompts)
-        const aiResponse = await openai.images.generate({ model: "dall-e-3", prompt: JSON.stringify(prompts), size: "1024x1024", quality:"standard", n:1,response_format:"b64_json"  })
+        const aiResponse = await openai.images.generate({ model: "dall-e-3", prompt: JSON.stringify(prompts), size: "1024x1024", quality: "standard", n: 1, response_format: "b64_json" })
         // aiResponse.then((response)=>{console.log(response)}).catch((error)=>{console.log(error)})
-        const image =await aiResponse.data
+        const image = await aiResponse.data
         // image.then((res)=>{console.log(res.data.Images[0].b64_json)}).catch((err)=>{console.log(err)}) .data.Images[0].b64_json
 
         // console.log(image)
